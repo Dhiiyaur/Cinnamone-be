@@ -27,7 +27,7 @@ SECRET_KEY = 'a+_=r#x^-4&gt(x^*jfu!nl-vp@_5_yo8m-p+*ds-vk+ukbgy9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['be-cinnamone.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
