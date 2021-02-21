@@ -1,4 +1,5 @@
 from rest_framework.views import APIView
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -20,7 +21,7 @@ from .models import Product, OrderProduct, Order
 
 class ProductList(ListAPIView):
 
-    permission_classes = (AllowAny,)
+    # permission_classes = (AllowAny,)
     serializer_class = ProductListSerializers
     queryset = Product.objects.all()
 
@@ -36,6 +37,8 @@ class ProductDetail(APIView):
 
 
 class addToCart(APIView):
+
+    permission_classes = [IsAuthenticated]
 
     def post(self, request):
 
@@ -81,6 +84,8 @@ class addToCart(APIView):
 
 class removeFromCart(APIView):
 
+    permission_classes = [IsAuthenticated]
+    
     def post(self, request):
 
         print(request.user)
@@ -130,6 +135,8 @@ class removeFromCart(APIView):
 
 class UserCart(APIView):
 
+    permission_classes = [IsAuthenticated]
+
     def get(self, request):
 
         try:
@@ -144,6 +151,8 @@ class UserCart(APIView):
 
 
 class Checkout(APIView):
+
+    permission_classes = [IsAuthenticated]
 
     def post(self, request):
 
@@ -162,8 +171,8 @@ class Checkout(APIView):
         plain_message = ''
         from_email = 'noreply@cinnamone.com' 
         to = request.user.email
-        print('not notttttt')
-        print(to)
-        print(message)
+        # print('not notttttt')
+        # print(to)
+        # print(message)
         mail.send_mail(subject, plain_message, from_email, [to], html_message=message)
         return Response(status=status.HTTP_200_OK)
