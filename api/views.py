@@ -85,7 +85,7 @@ class addToCart(APIView):
 class removeFromCart(APIView):
 
     permission_classes = [IsAuthenticated]
-    
+
     def post(self, request):
 
         print(request.user)
