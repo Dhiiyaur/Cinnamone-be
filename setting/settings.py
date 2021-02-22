@@ -158,7 +158,7 @@ STATICFILES_DIRS = [
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static-cdn')
-MEDIA_URL = '/static-cdn/'	
+MEDIA_URL = '/media/'	
 MEDIA_ROOT = BASE_DIR
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
