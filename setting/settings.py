@@ -161,6 +161,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static-cdn')
 MEDIA_URL = '/media/'	
 MEDIA_ROOT = BASE_DIR
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
 # api
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -188,3 +191,5 @@ EMAIL_HOST_PASSWORD = "xibwuajwfzoopixr"
 # user account
 
 ACCOUNT_EMAIL_VERIFICATION = "none"
+
+
