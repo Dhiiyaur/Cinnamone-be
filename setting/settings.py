@@ -169,12 +169,12 @@ SITE_ID = 1
 
 # Gmail
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = "projectkaho01@gmail.com"
-EMAIL_HOST_PASSWORD = "xibwuajwfzoopixr"
+EMAIL_BACKEND = SECRET_EMAIL
+EMAIL_HOST = SECRET_HOST
+EMAIL_USE_TLS = SECRET_TLS
+EMAIL_PORT = SECRET_PORT
+EMAIL_HOST_USER = SECRET_HOST_USER
+EMAIL_HOST_PASSWORD = SECRET_PASS
 
 
 # user account
